@@ -17,7 +17,7 @@ def assignBlocks(grid,xlimit,limit,numberOfBlocks,flag) :
 		grid[int(x1[i]/xlimit)][x1[i]%xlimit][1] = 0
 		grid[int(x1[i]/xlimit)][x1[i]%xlimit][2] = 0	
 	while not CheckingConnectivity.Checking(grid[:,:,0]) :
-		print 'not Valid Connection'
+		print('not Valid Connection')
 		for i in range(numberOfBlocks) :
 			grid[int(x1[i]/xlimit)][x1[i]%xlimit][0] = 255
 			grid[int(x1[i]/xlimit)][x1[i]%xlimit][1] = 255
