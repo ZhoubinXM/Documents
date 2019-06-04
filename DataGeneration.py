@@ -19,7 +19,7 @@ def assignBlocks(grid,xlimit,limit,numberOfBlocks,flag) :
 		grid[int(x1[i]/xlimit)][x1[i]%xlimit][1] = 0
 		grid[int(x1[i]/xlimit)][x1[i]%xlimit][2] = 0	
 	while not CheckingConnectivity.Checking(grid[:,:,0]) :
-		#print 'not Valid Connection'
+		#print('not Valid Connection')
 		for i in range(numberOfBlocks) :
 			grid[int(x1[i]/xlimit)][x1[i]%xlimit][0] = 255
 			grid[int(x1[i]/xlimit)][x1[i]%xlimit][1] = 255
@@ -34,6 +34,7 @@ def assignBlocks(grid,xlimit,limit,numberOfBlocks,flag) :
 		flag[i] = 1
 
 
+# 用来定义文件 用来存储数据
 folderName = 'trainImages'
 
 if os.path.exists(folderName):
@@ -53,14 +54,14 @@ for t in range(totalGames) :
 				a[i][j][k] = 255
 
 
-	#cv2.imshow('image',a)
+	cv2.imshow('image',a)
 	
 
 	limit = x*y
-	flag = np.zeros([limit])
+	flag = np.zeros([limit]) # 创建一个一维数组
 	assignBlocks(a,x,limit,numberOfBlocks,flag)
 	for i in range(limit) :
-		if not flag[i] == 0 :
+		if not flag[i] == 0:
 			#points[t][i] = -100
 			points.append(-100)
 		elif i== limit-1 :
