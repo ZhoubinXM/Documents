@@ -1,4 +1,10 @@
-# 生成数据集
+'''
+生成的数据集以及对应的每个状态的reward。
+终点 reward 100
+障碍物 reward -100
+其余状态 reeward 0
+存储reward of every state in pointsNew.txt
+'''
 import cv2
 import numpy as np
 import random
